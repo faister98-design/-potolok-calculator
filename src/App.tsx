@@ -63,7 +63,10 @@ export default function App() {
       created_at: new Date().toISOString()
     };
     try {
-      await bridge.send("VKWebAppSendPayload", { payload: JSON.stringify(payload) });
+     await bridge.send("VKWebAppSendPayload", {
+  group_id: 240467668,
+  payload: JSON.stringify(payload)
+});
       setMessage("Заявка передана в сообщество. Спасибо!");
     } catch {
       try {
